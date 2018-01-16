@@ -1,5 +1,12 @@
 = Simple servler app
 
+== Building
+
+`mvn clean war:war`
+
+
+== Running the app
+
 [source,bash]
 ----
 curl -X POST -c cookie -d "test-key=bbbbbb" http://localhost:8080/web-simple/session
