@@ -4,7 +4,7 @@
     <display-name>Servlet session</display-name>
 
 
-    <servlet>
+    <!-- <servlet>
         <servlet-name>session</servlet-name>
         <servlet-class>io.github.vjuranek.jee.servlet.SessionServlet</servlet-class>
         <load-on-startup>1</load-on-startup>
@@ -27,14 +27,14 @@
         <auth-constraint>
             <role-name>admin</role-name>
         </auth-constraint>
-    </security-constraint>
+    </security-constraint> -->
 
     <login-config>
         <auth-method>BASIC</auth-method>
     </login-config>
 
-    <security-role>
+    <!-- <security-role>
         <role-name>admin</role-name>
-    </security-role>
+    </security-role> -->
 
 </web-app>
