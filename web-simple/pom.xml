@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>io.github.vjuranek.jee</groupId>
     <artifactId>web-simple</artifactId>
-    <packaging>jar</packaging>
+    <packaging>war</packaging>
     <version>1.0-SNAPSHOT</version>
     <name>web-simple</name>
     <url>https://github.com/vjuranek/jee-apps</url>
@@ -18,9 +18,6 @@
 
         <!-- packages versions -->
         <version.jee>7.0</version.jee>
-
-        <!-- Maven plugin versions -->
-        <version.war.plugin>3.2.0</version.war.plugin>
     </properties>
 
     <dependencies>
@@ -33,21 +30,9 @@
     </dependencies>
 
     <build>
-        <pluginManagement>
-            <plugins>
-                <plugin>
-                    <artifactId>maven-war-plugin</artifactId>
-                    <version>${version.war.plugin}</version>
-                </plugin>
-            </plugins>
-        </pluginManagement>
-
         <finalName>${project.artifactId}</finalName>
 
         <plugins>
-            <plugin>
-                <artifactId>maven-war-plugin</artifactId>
-            </plugin>
             <plugin>
                 <groupId>org.wildfly.plugins</groupId>
                 <artifactId>wildfly-maven-plugin</artifactId>
