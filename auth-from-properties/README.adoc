@@ -1,5 +1,8 @@
 = Web authnetication from properties
 
+Basic web authentication based on properties files.
+Note, that properties file contains direcly password (not hashed password), so in this example actual password is hash of the password stored in `application-users.properties` (yes, this is confusing, switching to dedicated property file is TBD :-)
+
 == WildFly configuration
 
 [source, xml]
