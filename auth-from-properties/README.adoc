@@ -1,0 +1,15 @@
+= Web authnetication from properties
+
+== WildFly configuration
+
+[source, xml]
+----
+                <security-domain name="auth-test" cache-type="default">
+                    <authentication>
+                        <login-module code="UsersRoles" flag="required">
+                            <module-option name="usersProperties" value="file://${jboss.server.config.dir}/application-users.properties"/>
+                            <module-option name="rolesProperties" value="file://${jboss.server.config.dir}/application-roles.properties"/>
+                        </login-module>
+                    </authentication>
+                </security-domain>
+----
