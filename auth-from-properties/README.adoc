@@ -1,9 +1,27 @@
 = Web authnetication from properties
 
 Basic web authentication based on properties files.
-Note, that properties file contains direcly password (not hashed password), so in this example actual password is hash of the password stored in `application-users.properties` (yes, this is confusing, switching to dedicated property file is TBD :-)
+
 
 == WildFly configuration
+
+Config for properties files, which are part of the deployment, stored under `WEB-INF/classes` in the war file (i.e. stored under `java/resources` in the project):
+
+[source, xml]
+----
+			<security-domain name="auth-test" cache-type="default">
+                    <authentication>
+                        <login-module code="UsersRoles" flag="required">
+                            <module-option name="usersProperties" value="my-users.properties"/>
+                            <module-option name="rolesProperties" value="my-roles.properties"/>
+                        </login-module>
+                    </authentication>
+                </security-domain>
+            </security-domains>
+
+----
+
+Config for properties files relative to Wildfly server:
 
 [source, xml]
 ----
