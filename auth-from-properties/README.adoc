@@ -9,7 +9,7 @@ Config for properties files, which are part of the deployment, stored under `WEB
 
 [source, xml]
 ----
-			<security-domain name="auth-test" cache-type="default">
+            <security-domain name="auth-test" cache-type="default">
                     <authentication>
                         <login-module code="UsersRoles" flag="required">
                             <module-option name="usersProperties" value="my-users.properties"/>
