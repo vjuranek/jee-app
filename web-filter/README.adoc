@@ -1,0 +1,18 @@
+= Simple servler app
+
+== Building
+
+`mvn clean package`
+
+
+== Running the app
+
+[source,bash]
+----
+curl -X POST -c cookie -d "test-key=bbbbbb" http://localhost:8080/web-simple/session
+----
+
+[source,bash]
+----
+curl -b cookie  http://localhost:8080/web-simple/session
+----
