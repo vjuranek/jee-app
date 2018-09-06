@@ -2,7 +2,7 @@
 
 == Building
 
-`mvn clean package war:war`
+`mvn clean package`
 
 
 == Running the app
