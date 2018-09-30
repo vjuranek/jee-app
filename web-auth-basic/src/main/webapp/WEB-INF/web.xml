@@ -31,6 +31,7 @@
 
     <login-config>
         <auth-method>BASIC</auth-method>
+        <realm-name>myDomain</realm-name>
     </login-config>
 
     <!-- <security-role>
