@@ -34,3 +34,48 @@ Config for properties files relative to Wildfly server:
                     </authentication>
                 </security-domain>
 ----
+
+=== Elytron config
+
+[source, xml]
+----
+               [...]
+                <security-domain name="mySD" default-realm="myRealm" permission-mapper="default-permission-mapper">
+                    <realm name="myRealm" role-decoder="groups-to-roles"/>
+                </security-domain>
+----
+
+[source, xml]
+----
+<security-realms>
+               [...]
+	       <properties-realm name="myRealm" groups-attribute="groups">
+                    <users-properties path="application-users.properties" relative-to="jboss.server.config.dir" plain-text="true"/>
+                    <groups-properties path="application-roles.properties" relative-to="jboss.server.config.dir"/>
+                </properties-realm>
+</security-realms>
+----
+
+[source, xml]
+----
+<http>
+               [...]
+               <http-authentication-factory name="my-http-auth" security-domain="mySD" http-server-mechanism-factory="global">
+                    <mechanism-configuration>
+                        <mechanism mechanism-name="BASIC">
+                            <mechanism-realm realm-name="myDomain"/>
+                        </mechanism>
+                    </mechanism-configuration>
+                </http-authentication-factory>
+</http>
+----
+
+[source, xml]
+----
+<subsystem xmlns="urn:jboss:domain:undertow:6.0" [...]>
+	   [...]
+           <application-security-domains>
+                <application-security-domain name="myDomain" http-authentication-factory="my-http-auth"/>
+            </application-security-domains>
+</subsystem>
+----
